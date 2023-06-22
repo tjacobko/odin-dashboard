@@ -9,7 +9,7 @@
 }
 
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 body {
@@ -20,6 +20,8 @@ body {
     grid-template-rows: 1fr 2fr;
 }
 
+/* ----------------- HEADER ----------------- */
+
 header {
     grid-column: 2 / -1;
     color: var(--main-dark);
@@ -28,17 +30,23 @@ header {
     grid-template-columns: 2fr 1fr;
 }
 
+/* ----------------- Header > Top Left ----------------- */
+
 header > .search {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
+/* ----------------- Header > Top Right ----------------- */
+
 header > .profile {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
+
+/* ----------------- Header > Bottom Left ----------------- */
 
 header > .greeting {
     display: grid;
@@ -58,12 +66,16 @@ header > .greeting {
     grid-column: 2 / -1;
 }
 
+/* ----------------- Header > Bottom Right ----------------- */
+
 header > .media {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap: 20px;
 }
+
+/* ----------------- SIDEBAR ----------------- */
 
 .sidebar {
     grid-row: 1 / -1;
@@ -75,10 +87,17 @@ header > .media {
     padding-left: 20px;
 }
 
+/* ----------------- Sidebar > Top ----------------- */
+
 .sidebar > .title {
     display: flex;
     justify-content: start;
     align-items: center;
+    gap: 20px;
+}
+
+#dashboard-logo {
+    width: 3em;
 }
 
 h1 {
@@ -86,10 +105,24 @@ h1 {
     padding: 0;
 }
 
+/* ----------------- Sidebar > Middle ----------------- */
+
 .sidebar > .menu {
     display: grid;
     grid-template-rows: repeat(auto-fill, minmax(25px, 1fr));
+    gap: 20px;
 }
+
+.menu > .option {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-left: 10px;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+/* ----------------- MAIN ----------------- */
 
 main {
     grid-column: 2 / -1;
