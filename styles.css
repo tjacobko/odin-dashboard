@@ -1,6 +1,7 @@
 :root {
     --main-dark: #0A0908;
     --main-white: #f2f3f4;
+    --main-grey: rgba(164, 164, 164, 0.21);
     --secondary-dark: #22333B;
     --secondary-brown: #5E503F;
     --secondary-white: #ffffffc5;
@@ -28,6 +29,7 @@ header {
     background-color: var(--main-white);
     display: grid;
     grid-template-columns: 2fr 1fr;
+    padding: 0 30px;
 }
 
 /* ----------------- Header > Top Left ----------------- */
@@ -38,12 +40,27 @@ header > .search {
     gap: 15px;
 }
 
+#searchbar {
+    background-color: var(--main-grey);
+    border: none;
+    border-radius: 12px;
+    padding: 4px 15px;
+    width: 85%;
+}
+
 /* ----------------- Header > Top Right ----------------- */
 
 header > .profile {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, auto);
     gap: 20px;
+    justify-content: end;
+    align-items: center;
+}
+
+#profile-name {
+    font-size: 18px;
+    font-weight: 600;
 }
 
 /* ----------------- Header > Bottom Left ----------------- */
@@ -51,19 +68,34 @@ header > .profile {
 header > .greeting {
     display: grid;
     grid-template-columns: 1fr 3fr;
+    gap: 10px;
+}
+
+.greeting > p {
+    margin: 0;
 }
 
 .greeting-pic {
     grid-row: 1 / 3;
     grid-column: 1 / 2;
+    border: 1px solid black;
+    border-radius: 15px;
+    text-align: center;
+    align-self: center;
 }
 
 .greeting-msg {
     grid-column: 2 / -1;
+    align-self: end;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 .greeting-name {
     grid-column: 2 / -1;
+    align-self: start;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 /* ----------------- Header > Bottom Right ----------------- */
@@ -72,7 +104,18 @@ header > .media {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    gap: 20px;
+    gap: 25px;
+}
+
+.media-btn {
+    min-width: 100px;
+    background-color: var(--sidebar-brown);
+    color: var(--main-white);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 /* ----------------- SIDEBAR ----------------- */
@@ -127,5 +170,51 @@ h1 {
 main {
     grid-column: 2 / -1;
     color: var(--main-dark);
-    background-color: var(--secondary-white);
+    background-color: var(--main-grey);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    padding: 30px 15px;
+}
+
+/* ----------------- Main > Left ----------------- */
+
+.card-grid {
+    grid-row: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card-grid-header {
+    grid-column: 1 / 3;
+}
+
+.card-grid > h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    max-width: 300px;
+    padding: 30px 20px 40px 20px;
+    border-radius: 10px;
+    background-color: var(--main-white);
+}
+
+.card > h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* ----------------- Main > Right Top ----------------- */
+
+#announcements {
+    grid-column: 2 / 3;
+}
+
+/* ----------------- Main > Right Bottom ----------------- */
+
+#trending {
+    grid-column: 2 / 3;
 }
